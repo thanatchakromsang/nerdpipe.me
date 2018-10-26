@@ -1,0 +1,37 @@
+{
+  "license": "UNLICENSED",
+   "devDependencies": {
+      "@types/jest": "^23.3.7",
+      "@types/node": "^8.0.29",
+      "@types/ramda": "^0.25.39",
+      "jest": "^23.6.0",
+      "nodemon": "^1.18.5",
+      "prettier": "^1.14.3",
+      "ts-jest": "^23.10.4",
+      "ts-node": "3.3.0",
+      "tsconfig-paths": "^3.6.0",
+      "tslint-config-prettier": "^1.15.0",
+      "typescript": "2.5.2"
+   },
+   "dependencies": {
+      "global": "^4.3.2",
+      "graphql": "0.13",
+      "graphql-binding": "^2.2.6",
+      "graphql-import": "^0.7.1",
+      "graphql-yoga": "^1.16.7",
+      "pg": "^7.3.0",
+      "ramda": "^0.25.0",
+      "reflect-metadata": "^0.1.10",
+      "tslint": "^5.11.0",
+      "typeorm": "0.2.8"
+   },
+   "scripts": {
+      "start": "nodemon -e ts,graphql -x ts-node -r dotenv/config -r tsconfig-paths/register src/index.ts",
+      "debug": "nodemon -e ts,graphql -x ts-node -r dotenv/config -r tsconfig-paths/register --inspect src/index.ts",
+      "build": "rm -rf dist && tsc --removeComments -p tsconfig.prod.json",
+      "lint": "tslint -p tsconfig.prod.json",
+      "format": "prettier --write src/**/*.ts",
+      "codegen": "graphql get-schema --project app && graphql codegen --project app",
+      "typeorm": "ts-node ./node_modules/.bin/typeorm"
+   }
+}
