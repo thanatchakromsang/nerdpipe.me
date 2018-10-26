@@ -1,0 +1,10 @@
+{
+  "license": "UNLICENSED",
+  "scripts": {
+    "precommit": "lerna run --concurrency 1 --stream precommit"
+  },
+  "dependencies": {
+    "husky": "^1.1.2",
+    "lerna": "^3.4.3"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "lerna": "2.11.0",
+  "packages": ["backend", "frontend"],
+  "version": "0.0.0"
+}

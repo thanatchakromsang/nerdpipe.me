@@ -1,0 +1,56 @@
+#!/bin/bash
+# Output colors
+BLACK="\033[30m"
+RED="\033[31m"
+GREEN="\033[32m"
+YELLOW="\033[33m"
+BLUE="\033[34m"
+PINK="\033[35m"
+CYAN="\033[36m"
+WHITE="\033[37m"
+NORMAL="\033[0;39m"
+
+CHECK="${NORMAL}[${GREEN}✓${NORMAL}]"
+
+DOCKER="docker-compose"
+
+start() {
+  $DOCKER up $1 ${*:2}
+}
+
+stop() {
+  $DOCKER stop $1 ${*:2}
+}
+
+setup() {
+if [[ "${DEPLOYMENT_ENV}" =~ ^(DEV|PROD)$ ]]; then
+  docker rmi $(docker images -f "dangling=true" -q)
+  $DOCKER pull
+else
+  echo -e "${YELLOW}Install packages...${NORMAL}"
+  cd senator && yarn
+  echo -e "${CHECK} Finished install node packages"
+fi
+}
+
+build() {
+  $DOCKER build $1 ${*:2}
+}
+
+logs() {
+  $DOCKER logs --follow --tail 20 $1
+}
+
+bash() {
+  $DOCKER exec $1 bash
+}
+
+database() {
+  $DOCKER exec database psql -U postgres
+}
+
+if [ $# -eq 0 ]; then
+    help
+fi
+
+$*
