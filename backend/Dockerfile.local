@@ -12,4 +12,4 @@ COPY yarn.lock .
 RUN yarn install --ignore-platform
 
 # start app
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
