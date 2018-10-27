@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
@@ -15,7 +14,16 @@
     "noImplicitThis": true,
     "importHelpers": true,
     "strictNullChecks": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "baseUrl": ".",
+    "paths": {
+      "@configs/*": ["./src/configs/*"],
+      "@tests/*": ["./src/tests/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@components/*": ["./src/components/*"],
+      "@containers/*": ["./src/containers/*"],
+      "@pages/*": ["./src/pages/*"]
+    }
   },
   "exclude": [
     "node_modules",
