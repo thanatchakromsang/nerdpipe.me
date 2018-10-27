@@ -34,5 +34,10 @@
       "format": "prettier --write src/**/*.ts",
       "codegen": "graphql get-schema --project app && graphql codegen --project app",
       "typeorm": "ts-node ./node_modules/.bin/typeorm"
-   }
+   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && yarn lint && yarn build"
+    }
+  }
 }
