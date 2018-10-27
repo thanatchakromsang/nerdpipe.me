@@ -6,19 +6,31 @@
     "ramda": "^0.25.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts-ts": "3.1.0"
+    "react-scripts-ts": "3.1.0",
+    "styled-components": "^4.0.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "storybook": "start-storybook -p 6006 -c .storybook"
   },
   "devDependencies": {
+    "@storybook/addon-info": "^3.4.11",
+    "@storybook/addon-knobs": "^3.4.11",
+    "@storybook/react": "^4.0.0-alpha.3",
     "@types/jest": "^23.3.7",
     "@types/node": "^10.12.0",
     "@types/react": "^16.4.18",
     "@types/react-dom": "^16.0.9",
+    "@types/storybook__addon-info": "^3.4.2",
+    "@types/storybook__addon-knobs": "^3.4.1",
+    "@types/storybook__react": "^3.0.9",
+    "@types/styled-components": "^4.0.3",
+    "awesome-typescript-loader": "^5.2.1",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "storybook-addon-jsx": "^5.4.0",
     "typescript": "^3.1.3"
   }
 }
