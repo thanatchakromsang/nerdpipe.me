@@ -6,7 +6,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lerna run --concurrency 1 --stream pre-commit"
+      "pre-push": "lerna run format && lerna run lint"
     }
   }
 }
