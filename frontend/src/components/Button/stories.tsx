@@ -3,7 +3,7 @@ import * as React from 'react'
 import { boolean, text } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
 
-import { Button } from './Button'
+import { Button } from '.'
 
 storiesOf('Button', module).add('basic Button', () => (
   <Button

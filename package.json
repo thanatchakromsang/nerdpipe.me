@@ -1,10 +1,12 @@
 {
-  "license": "UNLICENSED",
-  "scripts": {
-    "precommit": "lerna run --concurrency 1 --stream precommit"
-  },
+  "license": "MIT",
   "dependencies": {
     "husky": "^1.1.2",
     "lerna": "^3.4.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "lerna run format && lerna run lint"
+    }
   }
 }
