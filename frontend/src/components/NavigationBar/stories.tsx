@@ -7,6 +7,17 @@ import { NavigationBar } from '.'
 
 storiesOf('Navigation bar', module)
   .addDecorator(story => <div style={{ width: 800 }}>{story()}</div>)
-  .add('default', () => <NavigationBar />)
-  .add('with location', () => <NavigationBar location={'Home'} />)
-  .add('authenticated', () => <NavigationBar auth={true} open={boolean('open menu', false)} />)
+  .add('default', () => <NavigationBar onMenuClick={() => alert('default')} />)
+  .add('with location', () => (
+    <NavigationBar
+      location={'Home'}
+      onMenuClick={() => alert('with location')}
+    />
+  ))
+  .add('authenticated', () => (
+    <NavigationBar
+      auth={true}
+      open={boolean('open menu', false)}
+      onMenuClick={() => alert('authenticated')}
+    />
+  ))
