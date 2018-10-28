@@ -17,12 +17,14 @@
     "noUnusedLocals": true,
     "baseUrl": ".",
     "paths": {
-      "@configs/*": ["./src/configs/*"],
-      "@tests/*": ["./src/tests/*"],
-      "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
+      "@configs/*": ["./src/configs/*"],
       "@containers/*": ["./src/containers/*"],
-      "@pages/*": ["./src/pages/*"]
+      "@contexts/*": ["./src/contexts/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@tests/*": ["./src/tests/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
   "exclude": [
