@@ -14,6 +14,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 interface NavigationBarProps extends LoggedInProps {
   auth?: boolean
   location?: string
+  onMenuClick?: () => void
 }
 
 interface LoggedInProps {
@@ -39,13 +40,18 @@ const Typography = styled(UnstyledTypography)`
 export const NavigationBar = ({
   auth,
   location,
+  onMenuClick,
   ...props
 }: NavigationBarProps): JSX.Element => {
   return (
     <Wrapper>
       <AppBar position="static">
         <Toolbar>
-          <IconButton color="inherit" aria-label="Menu">
+          <IconButton
+            color="inherit"
+            aria-label="Menu"
+            onClick={() => onMenuClick!()}
+          >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit">
