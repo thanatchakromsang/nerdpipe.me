@@ -4,6 +4,8 @@ import { configure } from '@storybook/react'
 import { setAddon, addDecorator } from '@storybook/react'
 import JSXAddon from 'storybook-addon-jsx'
 import { withKnobs, select } from '@storybook/addon-knobs/react'
+import { BrowserRouter as Router } from 'react-router-dom'
+
 addDecorator(withKnobs)
 setAddon(JSXAddon)
 
@@ -26,14 +28,13 @@ const withStoryStyles = storyFn => {
   )
 }
 
+const withRouter = storyFn => <Router>{storyFn()}</Router>
+
 // automatically import all files ending in *.stories.js
-const reqComponents = require.context(
-  '../src',
-  true,
-  /stories.tsx$/
-)
+const reqComponents = require.context('../src', true, /stories.tsx$/)
 function loadStories() {
   addDecorator(withStoryStyles)
+  addDecorator(withRouter)
   reqComponents.keys().forEach(reqComponents)
 }
 
